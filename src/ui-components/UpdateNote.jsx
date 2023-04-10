@@ -28,11 +28,21 @@ export default function UpdateNote(props) {
     textFieldThreeThreeFourNineThreeZeroSixEightValue,
     setTextFieldThreeThreeFourNineThreeZeroSixEightValue,
   ] = useStateMutationAction(article?.coverimage);
+  const [
+    textFieldThreeThreeEightFiveThreeZeroEightOneValue,
+    setTextFieldThreeThreeEightFiveThreeZeroEightOneValue,
+  ] = useStateMutationAction(article?.author);
+  const [
+    textFieldThreeThreeFourNineThreeZeroSixFiveValue,
+    setTextFieldThreeThreeFourNineThreeZeroSixFiveValue,
+  ] = useStateMutationAction(article?.title);
   const buttonOnClick = useDataStoreUpdateAction({
     fields: {
       description: textFieldThreeThreeFourNineThreeZeroSixSevenValue,
       text: textFieldThreeThreeFourNineThreeZeroSixSixValue,
       coverimage: textFieldThreeThreeFourNineThreeZeroSixEightValue,
+      author: textFieldThreeThreeEightFiveThreeZeroEightOneValue,
+      title: textFieldThreeThreeFourNineThreeZeroSixFiveValue,
     },
     id: article?.id,
     model: Article,
@@ -42,8 +52,8 @@ export default function UpdateNote(props) {
     <Flex
       gap="0"
       direction="column"
-      width="unset"
-      height="unset"
+      width="745px"
+      height="498px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -53,16 +63,15 @@ export default function UpdateNote(props) {
       {...rest}
     >
       <Flex
-        gap="24px"
+        gap="10px"
         direction="column"
-        width="unset"
-        height="545px"
+        width="745px"
+        height="498px"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
-        alignSelf="stretch"
         position="relative"
-        padding="24px 24px 24px 24px"
+        padding="0px 30px 0px 30px"
         {...getOverrideProps(overrides, "Content")}
       >
         <Flex
@@ -99,24 +108,29 @@ export default function UpdateNote(props) {
           ></Icon>
         </Flex>
         <TextField
-          width="592px"
-          height="unset"
+          width="unset"
+          height="57px"
           label="Title"
           shrink="0"
+          alignSelf="stretch"
           size="default"
-          isDisabled={true}
+          isDisabled={false}
           labelHidden={false}
           variation="default"
-          placeholder="Make sure to store/edit data in a DOC and edit here. Can't change title"
+          value={textFieldThreeThreeFourNineThreeZeroSixFiveValue}
+          onChange={(event) => {
+            setTextFieldThreeThreeFourNineThreeZeroSixFiveValue(
+              event.target.value
+            );
+          }}
           {...getOverrideProps(overrides, "TextField33493065")}
         ></TextField>
         <TextField
-          width="592px"
-          height="unset"
+          width="unset"
+          height="74px"
           label="Content"
-          grow="1"
-          shrink="1"
-          basis="0"
+          shrink="0"
+          alignSelf="stretch"
           size="default"
           isDisabled={false}
           labelHidden={false}
@@ -130,10 +144,11 @@ export default function UpdateNote(props) {
           {...getOverrideProps(overrides, "TextField33493066")}
         ></TextField>
         <TextField
-          width="592px"
+          width="unset"
           height="unset"
           label="Description"
           shrink="0"
+          alignSelf="stretch"
           size="default"
           isDisabled={false}
           labelHidden={false}
@@ -147,10 +162,11 @@ export default function UpdateNote(props) {
           {...getOverrideProps(overrides, "TextField33493067")}
         ></TextField>
         <TextField
-          width="592px"
+          width="unset"
           height="unset"
           label="Image Name"
           shrink="0"
+          alignSelf="stretch"
           size="default"
           isDisabled={false}
           labelHidden={false}
@@ -162,6 +178,24 @@ export default function UpdateNote(props) {
             );
           }}
           {...getOverrideProps(overrides, "TextField33493068")}
+        ></TextField>
+        <TextField
+          width="unset"
+          height="unset"
+          label="Author"
+          shrink="0"
+          alignSelf="stretch"
+          size="default"
+          isDisabled={false}
+          labelHidden={false}
+          variation="default"
+          value={textFieldThreeThreeEightFiveThreeZeroEightOneValue}
+          onChange={(event) => {
+            setTextFieldThreeThreeEightFiveThreeZeroEightOneValue(
+              event.target.value
+            );
+          }}
+          {...getOverrideProps(overrides, "TextField33853081")}
         ></TextField>
         <Divider
           width="unset"

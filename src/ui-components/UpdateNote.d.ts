@@ -18,6 +18,7 @@ export declare type UpdateNoteOverridesProps = {
     TextField33493066?: PrimitiveOverrideProps<TextFieldProps>;
     TextField33493067?: PrimitiveOverrideProps<TextFieldProps>;
     TextField33493068?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField33853081?: PrimitiveOverrideProps<TextFieldProps>;
     Divider?: PrimitiveOverrideProps<DividerProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;

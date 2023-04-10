@@ -92,7 +92,7 @@ function ArticleData({ articleTitle } ) {
           Description: { children: description,fontSize:"1rem",fontWeight:"400", },
           Content: { 
             children: null,
-            dangerouslySetInnerHTML: { __html: modifiedText },
+            dangerouslySetInnerHTML: { __html: modifiedText+ "- "+ author },
             fontSize: "1.2rem",
             padding:"5%",
             paddingTop:"1%",
@@ -109,7 +109,6 @@ function ArticleData({ articleTitle } ) {
           style:{backgroundColor:"#CED8E6"}
         }}
       />
-    
     </div>
   );
 }
@@ -178,7 +177,7 @@ function ProgressBar() {
 };
 
 
-async function updateArticle(id, newDesc, newText, newCoverImage) {
+async function updateArticle(id, newDesc, newText, newCoverImage,newTitle, newAuthor) {
   const original = await DataStore.query(Article, id);
   
   await DataStore.save(
@@ -186,6 +185,8 @@ async function updateArticle(id, newDesc, newText, newCoverImage) {
       updated.description = newDesc;
       updated.text = newText;
       updated.coverimage = newCoverImage;
+      updated.title = newTitle;
+      updated.author = newAuthor;
     })
   );
 }
@@ -352,6 +353,16 @@ function App({ signOut }) {
         setShowUpdateModal(false);
       },
     },
+    TextField33493065:{
+  
+      defaultValue: updateNote && updateNote.title ? updateNote.title : '',
+      onChange: (event) => {
+        setUpdateNote((prevNote) => ({
+          ...prevNote,
+          title: event.target.value,
+        }));
+      },
+    },
     TextField33493066: {
       defaultValue: updateNote && updateNote.text ? updateNote.text : '',
       onChange: (event) => {
@@ -379,10 +390,19 @@ function App({ signOut }) {
         }));
       },
     },
+    TextField33853081:{
+      defaultValue: updateNote && updateNote.author ? updateNote.author : '',
+      onChange: (event) => {
+        setUpdateNote((prevNote) => ({
+          ...prevNote,
+          author: event.target.value,
+        }));
+      },
+    },
     Button: {
       onClick: async () => {
         try {
-          await updateArticle(updateNote.id, updateNote.description, updateNote.text, updateNote.coverimage);
+          await updateArticle(updateNote.id, updateNote.description, updateNote.text, updateNote.coverimage,updateNote.title,updateNote.author);
           setShowUpdateModal(false);
           window.location.reload();
         } catch (error) {
