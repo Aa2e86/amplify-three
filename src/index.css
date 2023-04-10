@@ -1,0 +1,66 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@500&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  background-color: #f4f1f1 !important;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.modal {
+  position: absolute;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  top: 100px;
+  border: .5px solid grey;
+}
+
+.modalupdate {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  
+  border: .5px solid grey;
+}
+
+.container {
+margin: 0px;
+  margin-top: 50px;
+  align-items: left;
+  max-width: 100%;
+  margin-top: 5%;
+}
+
+.amplify-input{
+  color: red;
+}
+
+.hover{
+  color:white !important;
+  border-color: white !important;
+  
+}
+.hover:hover{
+  color:rgb(0, 0, 0) !important;
+  border-color: rgb(67, 71, 74) !important;
+}
