@@ -92,7 +92,7 @@ function ArticleData({ articleTitle } ) {
           Description: { children: description,fontSize:"1rem",fontWeight:"400", },
           Content: { 
             children: null,
-            dangerouslySetInnerHTML: { __html:<pre> modifiedText </pre>},
+            dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
             padding:"5%",
             paddingTop:"1%",
