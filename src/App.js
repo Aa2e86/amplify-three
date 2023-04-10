@@ -236,7 +236,7 @@ function App({ signOut }) {
         </Helmet>
 
           <div className="" style={{marginTop:"7em",marginLeft:"7em",marginRight:"7em"}}>
-          <h1 style={{ paddingLeft: "1%", fontFamily: "raleway", fontWeight: "600", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>FEATUR3D</h1>
+          <h1 style={{ paddingLeft: "1%", fontFamily: "raleway", fontWeight: "600", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>FEATURED</h1>
 
           <div style={{width:"15%",borderBottom:"1px solid black", marginBottom:"2%",marginLeft:"1%"}}></div>
           <StoryCollectionData />
