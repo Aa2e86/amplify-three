@@ -36,6 +36,10 @@ export default function CreateNote(props) {
     textFieldThreeThreeEightFiveThreeZeroSevenFourValue,
     setTextFieldThreeThreeEightFiveThreeZeroSevenFourValue,
   ] = useStateMutationAction("");
+  const [
+    textFieldThreeThreeNineZeroThreeZeroEightFourValue,
+    setTextFieldThreeThreeNineZeroThreeZeroEightFourValue,
+  ] = useStateMutationAction("");
   const buttonOnClick = useDataStoreCreateAction({
     fields: {
       title: textFieldThreeOneSixZeroTwoFourEightFiveValue,
@@ -43,6 +47,7 @@ export default function CreateNote(props) {
       description: textFieldThreeThreeOneSixThreeZeroOneFourValue,
       coverimage: textFieldThreeThreeOneSixThreeZeroTwoOneValue,
       author: textFieldThreeThreeEightFiveThreeZeroSevenFourValue,
+      urltitle: textFieldThreeThreeNineZeroThreeZeroEightFourValue,
     },
     model: Article,
     schema: schema,
@@ -198,6 +203,12 @@ export default function CreateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          value={textFieldThreeThreeNineZeroThreeZeroEightFourValue}
+          onChange={(event) => {
+            setTextFieldThreeThreeNineZeroThreeZeroEightFourValue(
+              event.target.value
+            );
+          }}
           {...getOverrideProps(overrides, "TextField33903084")}
         ></TextField>
         <Divider
