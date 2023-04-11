@@ -98,7 +98,7 @@ function ArticleData({ articleTitle } ) {
             paddingTop:"1%",
             fontWeight: "200",
             lineHeight:"2",
-            backgroundColor:"#f5f5f5",
+            backgroundColor:"#ffffff",
             borderRadius:"15px",
             width:"70%",
             alignSelf:"center",
