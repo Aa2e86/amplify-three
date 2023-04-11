@@ -14,14 +14,14 @@ export const schema = {
                     "name": "title",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "description": {
                     "name": "description",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
+                    "isRequired": true,
                     "attributes": []
                 },
                 "text": {
@@ -40,6 +40,13 @@ export const schema = {
                 },
                 "author": {
                     "name": "author",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "urltitle": {
+                    "name": "urltitle",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -96,5 +103,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.0",
-    "version": "0715df7b31b5eac0aae0e1ed8490c660"
+    "version": "71b9b168f2ce2a2b4fbde71e30f8dada"
 };

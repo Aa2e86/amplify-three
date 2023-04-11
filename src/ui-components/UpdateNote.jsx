@@ -52,8 +52,8 @@ export default function UpdateNote(props) {
     <Flex
       gap="0"
       direction="column"
-      width="745px"
-      height="498px"
+      width="784px"
+      height="577px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -65,8 +65,8 @@ export default function UpdateNote(props) {
       <Flex
         gap="10px"
         direction="column"
-        width="745px"
-        height="498px"
+        width="796px"
+        height="550px"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
@@ -196,6 +196,18 @@ export default function UpdateNote(props) {
             );
           }}
           {...getOverrideProps(overrides, "TextField33853081")}
+        ></TextField>
+        <TextField
+          width="unset"
+          height="unset"
+          label="urlTitle"
+          shrink="0"
+          alignSelf="stretch"
+          size="default"
+          isDisabled={false}
+          labelHidden={false}
+          variation="default"
+          {...getOverrideProps(overrides, "TextField33903077")}
         ></TextField>
         <Divider
           width="unset"

@@ -15,7 +15,7 @@ export default function Story(props) {
   const { article, story, overrides, ...rest } = props;
   const storyOnClick = useNavigateAction({
     type: "url",
-    url: `${"/article/"}${article?.title}`,
+    url: `${"/article/"}${article?.urltitle}`,
   });
   return (
     <Flex

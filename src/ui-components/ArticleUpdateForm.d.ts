@@ -19,6 +19,7 @@ export declare type ArticleUpdateFormInputValues = {
     text?: string;
     coverimage?: string;
     author?: string;
+    urltitle?: string;
 };
 export declare type ArticleUpdateFormValidationValues = {
     title?: ValidationFunction<string>;
@@ -26,6 +27,7 @@ export declare type ArticleUpdateFormValidationValues = {
     text?: ValidationFunction<string>;
     coverimage?: ValidationFunction<string>;
     author?: ValidationFunction<string>;
+    urltitle?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ArticleUpdateFormOverridesProps = {
@@ -35,6 +37,7 @@ export declare type ArticleUpdateFormOverridesProps = {
     text?: PrimitiveOverrideProps<TextFieldProps>;
     coverimage?: PrimitiveOverrideProps<TextFieldProps>;
     author?: PrimitiveOverrideProps<TextFieldProps>;
+    urltitle?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type ArticleUpdateFormProps = React.PropsWithChildren<{
     overrides?: ArticleUpdateFormOverridesProps | undefined | null;

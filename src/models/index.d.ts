@@ -12,11 +12,12 @@ type EagerArticle = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly title?: string | null;
-  readonly description?: string | null;
+  readonly title: string;
+  readonly description: string;
   readonly text?: string | null;
   readonly coverimage?: string | null;
   readonly author?: string | null;
+  readonly urltitle?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -27,11 +28,12 @@ type LazyArticle = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly title?: string | null;
-  readonly description?: string | null;
+  readonly title: string;
+  readonly description: string;
   readonly text?: string | null;
   readonly coverimage?: string | null;
   readonly author?: string | null;
+  readonly urltitle?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

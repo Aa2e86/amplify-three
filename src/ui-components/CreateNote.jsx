@@ -49,10 +49,10 @@ export default function CreateNote(props) {
   });
   return (
     <Flex
-      gap="16px"
+      gap="0"
       direction="column"
-      width="640px"
-      height="unset"
+      width="632px"
+      height="568px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -62,16 +62,15 @@ export default function CreateNote(props) {
       {...rest}
     >
       <Flex
-        gap="24px"
+        gap="5px"
         direction="column"
         width="unset"
         height="unset"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
-        alignSelf="stretch"
         position="relative"
-        padding="24px 24px 24px 24px"
+        padding="12px 20px 12px 20px"
         {...getOverrideProps(overrides, "Content")}
       >
         <Flex
@@ -189,6 +188,17 @@ export default function CreateNote(props) {
             );
           }}
           {...getOverrideProps(overrides, "TextField33853074")}
+        ></TextField>
+        <TextField
+          width="592px"
+          height="unset"
+          label="urlTitle"
+          shrink="0"
+          size="default"
+          isDisabled={false}
+          labelHidden={false}
+          variation="default"
+          {...getOverrideProps(overrides, "TextField33903084")}
         ></TextField>
         <Divider
           width="unset"

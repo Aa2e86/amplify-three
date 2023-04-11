@@ -28,6 +28,7 @@ export default function ArticleCreateForm(props) {
     text: "",
     coverimage: "",
     author: "",
+    urltitle: "",
   };
   const [title, setTitle] = React.useState(initialValues.title);
   const [description, setDescription] = React.useState(
@@ -36,6 +37,7 @@ export default function ArticleCreateForm(props) {
   const [text, setText] = React.useState(initialValues.text);
   const [coverimage, setCoverimage] = React.useState(initialValues.coverimage);
   const [author, setAuthor] = React.useState(initialValues.author);
+  const [urltitle, setUrltitle] = React.useState(initialValues.urltitle);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setTitle(initialValues.title);
@@ -43,14 +45,16 @@ export default function ArticleCreateForm(props) {
     setText(initialValues.text);
     setCoverimage(initialValues.coverimage);
     setAuthor(initialValues.author);
+    setUrltitle(initialValues.urltitle);
     setErrors({});
   };
   const validations = {
-    title: [],
-    description: [],
+    title: [{ type: "Required" }],
+    description: [{ type: "Required" }],
     text: [],
     coverimage: [],
     author: [],
+    urltitle: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -83,6 +87,7 @@ export default function ArticleCreateForm(props) {
           text,
           coverimage,
           author,
+          urltitle,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -130,7 +135,7 @@ export default function ArticleCreateForm(props) {
     >
       <TextField
         label="Title"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         value={title}
         onChange={(e) => {
@@ -142,6 +147,7 @@ export default function ArticleCreateForm(props) {
               text,
               coverimage,
               author,
+              urltitle,
             };
             const result = onChange(modelFields);
             value = result?.title ?? value;
@@ -158,7 +164,7 @@ export default function ArticleCreateForm(props) {
       ></TextField>
       <TextField
         label="Description"
-        isRequired={false}
+        isRequired={true}
         isReadOnly={false}
         value={description}
         onChange={(e) => {
@@ -170,6 +176,7 @@ export default function ArticleCreateForm(props) {
               text,
               coverimage,
               author,
+              urltitle,
             };
             const result = onChange(modelFields);
             value = result?.description ?? value;
@@ -198,6 +205,7 @@ export default function ArticleCreateForm(props) {
               text: value,
               coverimage,
               author,
+              urltitle,
             };
             const result = onChange(modelFields);
             value = result?.text ?? value;
@@ -226,6 +234,7 @@ export default function ArticleCreateForm(props) {
               text,
               coverimage: value,
               author,
+              urltitle,
             };
             const result = onChange(modelFields);
             value = result?.coverimage ?? value;
@@ -254,6 +263,7 @@ export default function ArticleCreateForm(props) {
               text,
               coverimage,
               author: value,
+              urltitle,
             };
             const result = onChange(modelFields);
             value = result?.author ?? value;
@@ -267,6 +277,35 @@ export default function ArticleCreateForm(props) {
         errorMessage={errors.author?.errorMessage}
         hasError={errors.author?.hasError}
         {...getOverrideProps(overrides, "author")}
+      ></TextField>
+      <TextField
+        label="Urltitle"
+        isRequired={false}
+        isReadOnly={false}
+        value={urltitle}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              title,
+              description,
+              text,
+              coverimage,
+              author,
+              urltitle: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.urltitle ?? value;
+          }
+          if (errors.urltitle?.hasError) {
+            runValidationTasks("urltitle", value);
+          }
+          setUrltitle(value);
+        }}
+        onBlur={() => runValidationTasks("urltitle", urltitle)}
+        errorMessage={errors.urltitle?.errorMessage}
+        hasError={errors.urltitle?.hasError}
+        {...getOverrideProps(overrides, "urltitle")}
       ></TextField>
       <Flex
         justifyContent="space-between"

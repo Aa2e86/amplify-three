@@ -24,7 +24,7 @@ function ArticleData({ articleTitle } ) {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const [fetchedArticle] = await DataStore.query(Article, c => c.title.eq(articleTitle));
+        const [fetchedArticle] = await DataStore.query(Article, c => c.urltitle.eq(articleTitle));
         setArticle(fetchedArticle);
        
         const url = await getArticleCoverImageUrl(fetchedArticle.coverimage);
