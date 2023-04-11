@@ -1,10 +1,12 @@
 /* src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@500&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@500;700&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap');
 
 body {
-  background-color: #f4f1f1 !important;
+  background-color: #ffffff !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
