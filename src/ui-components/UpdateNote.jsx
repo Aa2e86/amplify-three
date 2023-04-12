@@ -122,6 +122,7 @@ export default function UpdateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          isRequired={true}
           value={textFieldThreeThreeFourNineThreeZeroSixFiveValue}
           onChange={(event) => {
             setTextFieldThreeThreeFourNineThreeZeroSixFiveValue(
@@ -158,6 +159,7 @@ export default function UpdateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          isRequired={true}
           value={textFieldThreeThreeFourNineThreeZeroSixSevenValue}
           onChange={(event) => {
             setTextFieldThreeThreeFourNineThreeZeroSixSevenValue(
@@ -212,6 +214,7 @@ export default function UpdateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          isRequired={true}
           value={textFieldThreeThreeNineZeroThreeZeroSevenSevenValue}
           onChange={(event) => {
             setTextFieldThreeThreeNineZeroThreeZeroSevenSevenValue(

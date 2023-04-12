@@ -120,6 +120,7 @@ export default function CreateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          isRequired={true}
           value={textFieldThreeOneSixZeroTwoFourEightFiveValue}
           onChange={(event) => {
             setTextFieldThreeOneSixZeroTwoFourEightFiveValue(
@@ -152,6 +153,7 @@ export default function CreateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          isRequired={true}
           value={textFieldThreeThreeOneSixThreeZeroOneFourValue}
           onChange={(event) => {
             setTextFieldThreeThreeOneSixThreeZeroOneFourValue(
@@ -203,6 +205,7 @@ export default function CreateNote(props) {
           isDisabled={false}
           labelHidden={false}
           variation="default"
+          isRequired={true}
           value={textFieldThreeThreeNineZeroThreeZeroEightFourValue}
           onChange={(event) => {
             setTextFieldThreeThreeNineZeroThreeZeroEightFourValue(
