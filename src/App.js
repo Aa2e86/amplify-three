@@ -177,7 +177,7 @@ function ProgressBar() {
 };
 
 
-async function updateArticle(id, newDesc, newText, newCoverImage,newTitle, newAuthor) {
+async function updateArticle(id, newDesc, newText, newCoverImage,newTitle, newAuthor,newUrlTitle) {
   const original = await DataStore.query(Article, id);
   
   await DataStore.save(
@@ -187,6 +187,7 @@ async function updateArticle(id, newDesc, newText, newCoverImage,newTitle, newAu
       updated.coverimage = newCoverImage;
       updated.title = newTitle;
       updated.author = newAuthor;
+      updated.urltitle=newUrlTitle;
     })
   );
 }
@@ -399,10 +400,19 @@ function App({ signOut }) {
         }));
       },
     },
+    TextField33903077:{
+      defaultValue: updateNote && updateNote.urltitle ? updateNote.urltitle : '',
+      onChange: (event) => {
+        setUpdateNote((prevNote) => ({
+          ...prevNote,
+          urltitle: event.target.value,
+        }));
+      },
+    },
     Button: {
       onClick: async () => {
         try {
-          await updateArticle(updateNote.id, updateNote.description, updateNote.text, updateNote.coverimage,updateNote.title,updateNote.author);
+          await updateArticle(updateNote.id, updateNote.description, updateNote.text, updateNote.coverimage,updateNote.title,updateNote.author,updateNote.urltitle);
           setShowUpdateModal(false);
           window.location.reload();
         } catch (error) {
