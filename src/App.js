@@ -62,7 +62,9 @@ function ArticleData({ articleTitle } ) {
   }
 
   const { title, createdAt, description,author } = article;
-
+  const date = new Date(createdAt);
+  const options = { year: 'numeric', month: 'long', day:"numeric" };
+  const formattedDate = date.toLocaleDateString('en-US', options);
   return (
     <div  >
       <Helmet>
@@ -70,8 +72,11 @@ function ArticleData({ articleTitle } ) {
           <meta name="description" content={description} />
         </Helmet>
    <div style={{height: "550px", backgroundColor:"#0F141D", display: "flex", flexDirection: "grid", alignItems: "center", justifyContent: "center",marginBottom:"-2%"}}>
-   <div style={{backgroundColor:"#0F141D", width:"40%", height:"100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-    <h1 style={{color:"white", fontSize:"3em", fontWeight:"700",padding:"30px", paddingLeft:"30px"}}>{title}</h1>
+   <div style={{position:"relative",backgroundColor:"#0F141D", width:"40%", height:"100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+    <h1 style={{color:"white", fontSize:"3rem", fontWeight:"700",padding:"30px", paddingLeft:"30px"}}>{title}</h1>
+    <h3 style={{ borderTop: "1px solid rgba(255, 255, 255, 0.5)",position: "absolute", bottom: 10, left: "50%", transform: "translateX(-50%)", color: "rgba(245, 245, 245, 0.9)",width:"60%", fontSize: "1rem", fontWeight: 500,padding:'2%', paddingBottom: "3%", textAlign: "center" }}>
+  {author} at {formattedDate}   
+  </h3>
     {/* <h2 style={{position:"absolute",color:"white", fontSize:"1em", fontWeight:"300", bottom:"40%",left:"10%"}}>{author}</h2> */}
   </div>
   <div style={{backgroundImage:`url(${coverImageUrl})`, backgroundSize:"cover", width:"60%",height:"100%"}}>
@@ -92,12 +97,12 @@ function ArticleData({ articleTitle } ) {
           Description: { children: description,fontSize:"1rem",fontWeight:"400", },
           Content: { 
             children: null,
-            dangerouslySetInnerHTML: { __html: modifiedText+ "- "+ author },
+            dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
             padding:"5%",
             paddingTop:"1%",
             fontWeight: "200",
-            lineHeight:"2",
+            lineHeight:"1.8",
             backgroundColor:"#ffffff",
             borderRadius:"15px",
             width:"70%",
@@ -138,6 +143,8 @@ function StoryCollectionData() {
   return (
     
     <StoryCollection
+    className='story-collection'
+    templateColumns="repeat(auto-fit, minmax(420px, 1fr))"
       overrideItems={({ item, idx }) => {
         return {
           overrides: {
@@ -210,6 +217,7 @@ function App({ signOut }) {
   width="100%"
   backgroundColor="#272D2D"
   overrides={{
+   
     Button31632483: {
       onClick: () => setShowCreateModal(true),
       className:"hover",
