@@ -101,7 +101,7 @@ function ArticleData({ articleTitle } ) {
             dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
             padding:"5%",
-            paddingTop:"3%",
+            paddingTop:"2%",
             fontWeight: "200",
             lineHeight:"1.8g",
             backgroundColor:"#ffffff",
@@ -109,7 +109,7 @@ function ArticleData({ articleTitle } ) {
             width:"70%",
             alignSelf:"center",
             fontFamily: "'Poppins', sans-serif",
-            marginTop:"1%"
+            marginTop:"2%"
           },
           Coverimage:{src: coverImageUrl, height:" 22rem"},
           style:{backgroundColor:"#CED8E6"}
