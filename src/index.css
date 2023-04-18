@@ -21,7 +21,9 @@ body {
 .articleContent section{
     margin-top:-1rem;
 }
-
+.articleContent h2{
+    margin-top:-2rem;
+}
 
 a{
 color:#0C3334;
