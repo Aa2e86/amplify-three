@@ -201,11 +201,14 @@ async function updateArticle(id, newDesc, newText, newCoverImage,newTitle, newAu
 
 
 
+
+
+
 function App({ signOut }) {
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [updateNote, setUpdateNote] = useState();
-  
+ 
   // const articleDatas = ArticleData("Sunt.");
   // console.log(articleDatas && articleDatas.title);
 
@@ -265,14 +268,24 @@ function App({ signOut }) {
           <Authenticator hideSignUp={true}>
             
             <h2>Here you can design you content. Look at the comments:<a target="_blank" href=" https://jsfiddle.net/9q4fyL53/13/">Template</a></h2>
-          <CreateNote style={{ position: 'absolute',background: "white",
+            <CreateNote style={{ position: 'absolute',background: "white",
   marginLeft: "auto",
   marginRight: 'auto',
   width: "100%",
   left: "0",
   right: "0",
   top: "0px",
-  border: ".5px solid grey "}} />
+  border: ".5px solid grey "}} 
+  
+  overrides={{
+    Button: {
+      className:"Reload"
+    },
+  }}
+  
+/>
+
+  
 
           <FileUploader
       acceptedFileTypes={['image/*']}
@@ -318,7 +331,7 @@ function App({ signOut }) {
           <>
           <ArticleData articleTitle={match.params.articleTitle}  
           />
-          <div style={{marginTop:"-1em",marginLeft:"9em",marginRight:"9em"}}>
+          <div style={{marginTop:"-1em",marginLeft:"8em",marginRight:"9em"}}>
           <StoryCollectionData
   overrides={{
     SearchBarWrapper: {

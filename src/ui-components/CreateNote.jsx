@@ -10,6 +10,7 @@ import { Article } from "../models";
 import {
   getOverrideProps,
   useDataStoreCreateAction,
+  useNavigateAction,
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { schema } from "../models/schema";
@@ -21,12 +22,12 @@ export default function CreateNote(props) {
     setTextFieldThreeOneSixZeroTwoFourEightFiveValue,
   ] = useStateMutationAction("");
   const [
-    textFieldThreeOneSixZeroTwoFourEightSixValue,
-    setTextFieldThreeOneSixZeroTwoFourEightSixValue,
-  ] = useStateMutationAction("");
-  const [
     textFieldThreeThreeOneSixThreeZeroOneFourValue,
     setTextFieldThreeThreeOneSixThreeZeroOneFourValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneSixZeroTwoFourEightSixValue,
+    setTextFieldThreeOneSixZeroTwoFourEightSixValue,
   ] = useStateMutationAction("");
   const [
     textFieldThreeThreeOneSixThreeZeroTwoOneValue,
@@ -43,8 +44,8 @@ export default function CreateNote(props) {
   const buttonOnClick = useDataStoreCreateAction({
     fields: {
       title: textFieldThreeOneSixZeroTwoFourEightFiveValue,
-      text: textFieldThreeOneSixZeroTwoFourEightSixValue,
       description: textFieldThreeThreeOneSixThreeZeroOneFourValue,
+      text: textFieldThreeOneSixZeroTwoFourEightSixValue,
       coverimage: textFieldThreeThreeOneSixThreeZeroTwoOneValue,
       author: textFieldThreeThreeEightFiveThreeZeroSevenFourValue,
       urltitle: textFieldThreeThreeNineZeroThreeZeroEightFourValue,
@@ -52,6 +53,7 @@ export default function CreateNote(props) {
     model: Article,
     schema: schema,
   });
+  const buttonOnMouseUp = useNavigateAction({ type: "reload" });
   return (
     <Flex
       gap="0"
@@ -234,6 +236,9 @@ export default function CreateNote(props) {
           children="Save"
           onClick={() => {
             buttonOnClick();
+          }}
+          onMouseUp={() => {
+            buttonOnMouseUp();
           }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
