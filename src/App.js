@@ -101,7 +101,7 @@ function ArticleData({ articleTitle } ) {
             dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
             padding:"5%",
-            paddingTop:"1%",
+            paddingTop:"3%",
             fontWeight: "200",
             lineHeight:"1.8g",
             backgroundColor:"#ffffff",
