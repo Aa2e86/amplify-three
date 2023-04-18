@@ -145,7 +145,7 @@ function StoryCollectionData() {
     
     <StoryCollection
     className='story-collection'
-    templateColumns="repeat(auto-fit, minmax(420px, 1fr))"
+    templateColumns="repeat(auto-fit, minmax(430px, 1fr))"
       overrideItems={({ item, idx }) => {
         return {
           overrides: {
