@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.articleContent p{
+/* .articleContent p{
    margin-top:-1rem;
 }
 .articleContent section{
@@ -23,7 +23,7 @@ body {
 }
 .articleContent h2{
     margin-top:-1rem;
-}
+} */
 
 a{
 color:#0C3334;
