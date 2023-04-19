@@ -47,7 +47,7 @@ function ArticleData({ articleTitle } ) {
       const url = match[1];
       const newUrl = await getArticleCoverImageUrl(url);
       const imgTag = match[0];
-      const newImgTag = imgTag.replace(url, newUrl).replace(">", ` style="display:block;box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.4); border-radius:15px;width: unset; height: 28rem; margin: 0em auto;">`);
+      const newImgTag = imgTag.replace(url, newUrl).replace(">", ` style="display:block;box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.4); border-radius:15px;width: unset; height: 50vh; margin: 0em auto;">`);
       newText = newText.replace(imgTag, newImgTag);
       match = regex.exec(text);
     }
@@ -73,7 +73,7 @@ function ArticleData({ articleTitle } ) {
         </Helmet>
    <div style={{height: "550px", backgroundColor:"#0F141D", display: "flex", flexDirection: "grid", alignItems: "center", justifyContent: "center",marginBottom:"-2%"}}>
    <div style={{position:"relative",backgroundColor:"#0F141D", width:"40%", height:"100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-    <h1 style={{color:"white", fontSize:"3rem", fontWeight:"700",padding:"30px", paddingLeft:"30px"}}>{title}</h1>
+    <h1 style={{color:"white", fontSize:"3.1vw", fontWeight:"700",padding:"30px", paddingLeft:"30px"}}>{title}</h1>
     <h3 style={{ borderTop: "1px solid rgba(255, 255, 255, 0.5)",position: "absolute", bottom: 10, left: "50%", transform: "translateX(-50%)", color: "rgba(245, 245, 245, 0.9)",width:"60%", fontSize: "1rem", fontWeight: 500,padding:'2%', paddingBottom: "3%", textAlign: "center" }}>
   {author} at {formattedDate}   
   </h3>
@@ -92,7 +92,7 @@ function ArticleData({ articleTitle } ) {
       
       <ArticleUI 
         overrides={{
-          Title: { children: title,fontSize:"2.5rem",fontWeight:"500",lineHeight:"1.2" },
+          Title: { children: title,fontSize:"1.5vw",fontWeight:"500",lineHeight:"1.2" },
           Date: { children: "posted on "+ new Date(createdAt).toLocaleDateString(),fontSize:"0.8rem"},
           Description: { children: description,fontSize:"1rem",fontWeight:"400", },
           Content: { 
@@ -145,7 +145,7 @@ function StoryCollectionData() {
     
     <StoryCollection
     className='story-collection'
-    templateColumns="repeat(auto-fit, minmax(430px, 1fr))"
+    templateColumns="repeat(auto-fit, minmax(400px, 1fr))"
       overrideItems={({ item, idx }) => {
         return {
           overrides: {
@@ -184,6 +184,89 @@ function ProgressBar() {
   );
 };
 
+function CustomFooter(){
+  return(
+    <div
+  style={{
+    width: "100%",
+    height: "86px",
+    display: "flex",
+    marginTop:"2%",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    position: "relative",
+    backgroundColor: "rgba(39,45,45,1)",
+    padding: "0px",
+    paddingBottom:"120px"
+  }}
+>
+  <div
+    style={{
+      fontFamily: "Inter",
+      fontSize: "1vw",
+      fontWeight: "400",
+      color: "rgba(239,240,240,1)",
+      lineHeight: "24px",
+      textAlign: "left",
+      justifyContent:"right",
+      alignItems:"right",
+      width: "381px",
+      height: "72px",
+      position: "absolute",
+      top: "22.09%",
+      left: "20vw",
+      padding: "0px",
+      whiteSpace: "pre-wrap",
+      marginBottom:"10px"
+    }}
+  >
+    {" "}
+    Copyright© text 2023 by growyourventures.com{" "}
+    <br />
+    Contact: loyalderpp@gmail.com
+  </div>
+
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "unset",
+      height: "45px",
+      position: "absolute",
+      top: "18.6%",
+      left: "50%",
+      transform: "translateX(-50%)",
+      padding: "0px",
+    }}
+  >
+    {/* The content of the Logo component goes here */}
+  </div>
+  <div
+    style={{
+      fontFamily: "Raleway",
+      fontSize: "32px",
+      fontWeight: "800",
+      color: "rgba(235,250,237,1)",
+      textTransform: "capitalize",
+      lineHeight: "37.56800079345703px",
+      textAlign: "left",
+      position: "absolute",
+      top: "28px",
+      left: "7vw",
+      padding: "0px",
+      whiteSpace: "pre-wrap",
+    }}
+  >
+    GYV
+  </div>
+</div>
+
+  )
+}
+
 
 async function updateArticle(id, newDesc, newText, newCoverImage,newTitle, newAuthor,newUrlTitle) {
   const original = await DataStore.query(Article, id);
@@ -218,7 +301,7 @@ function App({ signOut }) {
       <div style={{position:"fixed",top:"0",width:"100%",height:"8px", zIndex:999}}>
       <NavBar
   height="70px"
-  width="100%"
+  width="auto"
   backgroundColor="#272D2D"
   overrides={{
    
@@ -252,16 +335,10 @@ function App({ signOut }) {
           <div className="" style={{marginTop:"7em",marginLeft:"7em",marginRight:"7em"}}>
           <h1 style={{ paddingLeft: "1%", fontFamily: "raleway", fontWeight: "600", textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>FEATURED</h1>
 
-          <div style={{width:"15%",borderBottom:"1px solid black", marginBottom:"2%",marginLeft:"1%"}}></div>
+          <div style={{width:"15%",borderBottom:"1px solid black", marginBottom:"2%"}}></div>
           <StoryCollectionData />
           </div>
-          <Footer style={{minWidth:"100%", marginTop:"1rem"}}
-          overrides={{
-            "You\u2019ve reached the End . . .":{
-              
-              marginLeft:"300px"
-            }
-          }}/>
+         <CustomFooter/>
           </Route>
           {/* <Route path="/upload" component={withAuthenticationRequired(UploadPage)} /> */}
           <Route path="/upload">
@@ -318,13 +395,7 @@ function App({ signOut }) {
            
            </Authenticator >
            </div>
-           <Footer style={{minWidth:"100%", marginTop:"1rem", position:"absolute",bottom:"-10rem"}}
-          overrides={{
-            "You\u2019ve reached the End . . .":{
-              
-              marginLeft:"300px"
-            }
-          }}/>
+           <CustomFooter/>
           </Route>
 
 
@@ -343,13 +414,7 @@ function App({ signOut }) {
   }}
 /> 
           </div>
-          <Footer style={{minWidth:"100%", marginTop:"1rem", zIndex:"-999", position:"absolute",bottom:"0"}}
-          overrides={{
-            "You\u2019ve reached the End . . .":{
-              
-              marginLeft:"300px"
-            }
-          }}/>
+          <CustomFooter/>
           </>
 )} />
      
