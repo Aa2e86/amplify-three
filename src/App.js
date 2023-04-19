@@ -96,19 +96,20 @@ function ArticleData({ articleTitle } ) {
           Date: { children: "posted on "+ new Date(createdAt).toLocaleDateString(),fontSize:"0.8rem"},
           Description: { children: description,fontSize:"1rem",fontWeight:"400", },
           Content: { 
+            className:"articleContent",
             children: null,
             dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
             padding:"5%",
-            paddingTop:"1%",
+            paddingTop:"2%",
             fontWeight: "200",
-            lineHeight:"1.8",
+            lineHeight:"1.8g",
             backgroundColor:"#ffffff",
             borderRadius:"15px",
             width:"70%",
             alignSelf:"center",
             fontFamily: "'Poppins', sans-serif",
-            marginTop:"1%"
+            marginTop:"2%"
           },
           Coverimage:{src: coverImageUrl, height:" 22rem"},
           style:{backgroundColor:"#CED8E6"}
@@ -144,7 +145,7 @@ function StoryCollectionData() {
     
     <StoryCollection
     className='story-collection'
-    templateColumns="repeat(auto-fit, minmax(420px, 1fr))"
+    templateColumns="repeat(auto-fit, minmax(430px, 1fr))"
       overrideItems={({ item, idx }) => {
         return {
           overrides: {
