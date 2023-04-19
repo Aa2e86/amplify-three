@@ -267,7 +267,7 @@ function App({ signOut }) {
           <div className='container'style={{marginTop:"10%"}} >
           <Authenticator hideSignUp={true}>
             
-            <h2>Here you can design you content. Look at the comments:<a target="_blank" href=" https://jsfiddle.net/9q4fyL53/13/">Template</a></h2>
+            <h2>Here you can design you content. Look at the comments:<a target="_blank" href=" https://jsfiddle.net/98oa5rm3/">Template</a> and here is a tutorial <a target="_blank" href=" https://docs.google.com/document/d/1HJZx-1tNGx2ssP_wf5z3hpUG1PfdUlap3aCoL3quPAw/edit#">Template</a></h2>
             <CreateNote style={{ position: 'absolute',background: "white",
   marginLeft: "auto",
   marginRight: 'auto',
