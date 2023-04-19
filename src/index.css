@@ -20,10 +20,25 @@ body {
 }
 .articleContent section{
     margin-top:-1rem;
-}
+}*/
+.articleContent h3{
+    margin-top:30px !important;
+    margin-bottom:30px !important;
+} 
 .articleContent h2{
-    margin-top:-1rem;
-} */
+ 
+  margin-top:40px !important;
+} 
+.articleContent img{
+ 
+  margin-bottom:50px  !important;
+}
+.articleContent p{
+ 
+  margin-top:10px !important;
+}
+
+
 
 a{
 color:#0C3334;
