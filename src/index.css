@@ -30,18 +30,38 @@ body {
   margin-top:40px !important;
 } 
 .articleContent img{
- 
-  margin-bottom:50px  !important;
+  margin-top:25px  !important;
+  margin-bottom:25px  !important;
 }
 .articleContent p{
  
   margin-top:10px !important;
 }
 
+strong b{
+font-weight:800;
+}
 
+table{
+  border-collapse: collapse; 
+  width: 100%; 
+  background-color: #FFE5B4;
+}
 
+th{
+border: 1px solid #444; padding: 10px;background-color: #FFE5CE;
+text-align: center;
+}
+
+td{
+border: 1px solid #444; padding: 10px;
+}
+
+.articleContent a{
+  color:#c98e75 !important
+}
 a{
-color:#0C3334;
+  color:#c98e75 !important
 }
 
 

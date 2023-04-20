@@ -47,7 +47,7 @@ function ArticleData({ articleTitle } ) {
       const url = match[1];
       const newUrl = await getArticleCoverImageUrl(url);
       const imgTag = match[0];
-      const newImgTag = imgTag.replace(url, newUrl).replace(">", ` style="display:block;box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.4); border-radius:15px;width: unset; height: 50vh; margin: 0em auto;">`);
+      const newImgTag = imgTag.replace(url, newUrl).replace(">", ` style="display:block;box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3); border-radius:8px;width: unset; height: 55vh; margin: 0em auto;">`);
       newText = newText.replace(imgTag, newImgTag);
       match = regex.exec(text);
     }
