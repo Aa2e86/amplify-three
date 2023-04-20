@@ -46,10 +46,10 @@ export default function Footer(props) {
         right="58.86%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children=" Copyright© text 2023 by growyourventures.com&#xA; Contact:  loyalderpp@gmail.com"
+        children=" Copyright© text 2023 by growyourventures.com&#xA;"
         {...getOverrideProps(
           overrides,
-          "Copyright\u00A9 text 2023 by growyourventures.com Contact: loyalderpp@gmail.com"
+          "Copyright\u00A9 text 2023 by growyourventures.com"
         )}
       ></Text>
       <Text

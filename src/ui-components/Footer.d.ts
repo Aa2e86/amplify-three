@@ -10,7 +10,7 @@ import { FlexProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type FooterOverridesProps = {
     Footer?: PrimitiveOverrideProps<ViewProps>;
-    "Copyright\u00A9 text 2023 by growyourventures.com Contact: loyalderpp@gmail.com"?: PrimitiveOverrideProps<TextProps>;
+    "Copyright\u00A9 text 2023 by growyourventures.com"?: PrimitiveOverrideProps<TextProps>;
     "You\u2019ve reached the End . . ."?: PrimitiveOverrideProps<TextProps>;
     Logo?: PrimitiveOverrideProps<FlexProps>;
     GYV?: PrimitiveOverrideProps<TextProps>;
