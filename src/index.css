@@ -50,6 +50,7 @@ table{
 
 th{
 border: 1px solid #444; padding: 10px;background-color: #FFE5CE;
+text-align: center;
 }
 
 td{
@@ -57,6 +58,9 @@ border: 1px solid #444; padding: 10px;
 }
 
 .articleContent a{
+  color:#c98e75 !important
+}
+a{
   color:#c98e75 !important
 }
 
