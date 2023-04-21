@@ -224,7 +224,6 @@ function CustomFooter(){
     {" "}
     Copyright© text 2023 by growyourventures.com{" "}
     <br />
-    Contact: loyalderpp@gmail.com
   </div>
 
   <div
