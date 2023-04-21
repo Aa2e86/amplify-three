@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 
 import { Storage, DataStore } from 'aws-amplify';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router,useParams, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router,useParams, Switch, Route,Link } from 'react-router-dom';
 import { NavBar, CreateNote, UpdateNote, StoryCollection,Footer, ArticleUI,StoryUpdateCollection, StoryUpdate } from './ui-components';
 import { Article } from './models'
 import { FileUploader } from '@aws-amplify/ui-react'
@@ -47,7 +47,7 @@ function ArticleData({ articleTitle } ) {
       const url = match[1];
       const newUrl = await getArticleCoverImageUrl(url);
       const imgTag = match[0];
-      const newImgTag = imgTag.replace(url, newUrl).replace(">", ` style="display:block;box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3); border-radius:8px;width: unset; height: 55vh; margin: 0em auto;">`);
+      const newImgTag = imgTag.replace(url, newUrl).replace(">", ` style="display:block;box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3); border-radius:8px;width: 46vw; height: unset; margin: 0em auto;">`);
       newText = newText.replace(imgTag, newImgTag);
       match = regex.exec(text);
     }
@@ -149,8 +149,9 @@ function StoryCollectionData() {
       overrideItems={({ item, idx }) => {
         return {
           overrides: {
-            Banner: { src: storyImages[item.title]},
-            Title:{style:{marginLeft:"5px"} },
+            Banner: { src: storyImages[item.title], style:{cursor: "pointer"}},
+            Title:{children: <Link style={{color:"rgb(66, 66, 66)"}} to={`/story/${item.id}`}>{item.title}</Link>,
+            style: { marginLeft: "5px" } },
             Description32683022:{children:[item.description.substring(0,150)+" . . ."],style:{marginLeft:"10px",marginRight:"10px"}},
             Description33693331:{children:new Date(item.createdAt).toLocaleDateString(),style:{paddingLeft:"10px",paddingRight:"5px"}}
           }
@@ -224,6 +225,7 @@ function CustomFooter(){
     {" "}
     Copyright© text 2023 by growyourventures.com{" "}
     <br />
+    Contact: loyalderpp@gmail.com
   </div>
 
   <div
