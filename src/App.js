@@ -61,6 +61,7 @@ function ArticleData({ articleTitle } ) {
     const headings = Array.from(doc.querySelectorAll('h2'));
     headings.forEach((heading) => {
       const id = heading.textContent.replace(/\s+/g, '-').toLowerCase();
+      console.log(id)
       heading.setAttribute('id', id);
       newText = newText.replace(`<h2>${heading.textContent}</h2>`, `<h2 id="${id}">${heading.textContent}</h2>`);
     });
@@ -182,8 +183,13 @@ function StoryCollectionData() {
       overrideItems={({ item, idx }) => {
         return {
           overrides: {
-            Banner: { src: storyImages[item.title], style:{cursor: "pointer"}},
-            Title:{children: <Link style={{color:"rgb(66, 66, 66)"}} to={`/story/${item.id}`}>{item.title}</Link>,
+            Banner: {
+              src: storyImages[item.title],
+              alt:item.coverimage.slice(0, item.coverimage.indexOf(".")).replace(/-/g, " "),
+              style: {cursor: "pointer"}
+            },
+            Title:{children: <Link style={{color:"rgb(66, 66, 66)"}} to={`/story/${item.id}`}>{item.title}
+            </Link>,
             style: { marginLeft: "5px" } },
             Description32683022:{children:[item.description.substring(0,150)+" . . ."],style:{marginLeft:"10px",marginRight:"10px"}},
             Description33693331:{children:new Date(item.createdAt).toLocaleDateString(),style:{paddingLeft:"10px",paddingRight:"5px"}}
