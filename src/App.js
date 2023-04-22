@@ -11,6 +11,7 @@ import { Article } from './models'
 import { FileUploader } from '@aws-amplify/ui-react'
 
 
+
 async function getArticleCoverImageUrl(key) {
   const url = await Storage.get(key);
   return url;
@@ -29,7 +30,8 @@ function ArticleData({ articleTitle } ) {
        
         const url = await getArticleCoverImageUrl(fetchedArticle.coverimage);
         setCoverImageUrl(url);
-        setModifiedText(await modifyText(fetchedArticle.text));
+        const modifiedText = await modifyText(fetchedArticle.text); 
+        setModifiedText(modifiedText);
       } catch (error) {
         console.log('Error fetching article', error);
       }
@@ -52,8 +54,37 @@ function ArticleData({ articleTitle } ) {
       match = regex.exec(text);
     }
     newText = newText.replace(codeRegex, '<code style="  border-radius:15px; background-color: #343541  ; color: #D1D5DB; padding: 0.5rem; display: inline-block;">$1</code>');
+  
+    // Add id attribute to each h2 element
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'text/html');
+    const headings = Array.from(doc.querySelectorAll('h2'));
+    headings.forEach((heading) => {
+      const id = heading.textContent.replace(/\s+/g, '-').toLowerCase();
+      heading.setAttribute('id', id);
+      newText = newText.replace(`<h2>${heading.textContent}</h2>`, `<h2 id="${id}">${heading.textContent}</h2>`);
+    });
+    
+    
+  
+    // Create table of contents
+    const toc = headings.map((heading) => {
+      const id = heading.getAttribute('id');
+      const text = heading.textContent;
+      return `<li><a href="#${id}">${text}</a></li>`;
+    }).join('');
+  
+    newText = `<h3 style="margin-bottom:10px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0px !important">${toc}</ul>` + newText;
+  // Get all links in the table of contents
+  
+  const tocDoc = parser.parseFromString(newText, 'text/html');
+  const tocLinks = Array.from(tocDoc.querySelectorAll('li a'));
+ 
+  
     return newText;
   }
+  
+  
   
   
 
@@ -115,7 +146,9 @@ function ArticleData({ articleTitle } ) {
           style:{backgroundColor:"#CED8E6"}
         }}
       />
+      
     </div>
+    
   );
 }
 
