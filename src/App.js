@@ -101,7 +101,8 @@ function ArticleData({ articleTitle } ) {
     <div  >
       <Helmet>
           <title>{title}</title>
-          <meta name="robots" content=" nofollow"/>
+          <meta name="robots" content="index, follow"/>
+
 
           <meta name="description" content={description} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -371,6 +372,8 @@ function App({ signOut }) {
           <Route exact path="/">
           <Helmet>
           <title>Grow Your Ventures - Solutions to Every Need</title>
+          <meta name="robots" content="index, follow"/>
+
           <meta name="description" content="Strategies to Improve Work Home and Living" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
          
