@@ -61,7 +61,7 @@ function ArticleData({ articleTitle } ) {
     const headings = Array.from(doc.querySelectorAll('h2'));
     headings.forEach((heading) => {
       const id = heading.textContent.replace(/\s+/g, '-').toLowerCase();
-      console.log(id)
+ 
       heading.setAttribute('id', id);
       newText = newText.replace(`<h2>${heading.textContent}</h2>`, `<h2 id="${id}">${heading.textContent}</h2>`);
     });

@@ -21,6 +21,14 @@ body {
 .articleContent section{
     margin-top:-1rem;
 }*/
+strong{
+  font-weight:bold !important ;
+ 
+  }
+   b{
+    font-weight:bold !important ;
+   
+    }
 .articleContent h3{
     margin-top:30px !important;
     margin-bottom:-20px !important;
@@ -44,9 +52,12 @@ body {
   margin-top:10px  !important;
   
 }
-
+.articleContent strong b{
+  font-weight:800 !important;
+}
 strong b{
-font-weight:800;
+font-weight:800 !important  ;
+color:red !important;
 }
 
 table{
