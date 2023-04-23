@@ -371,6 +371,7 @@ function App({ signOut }) {
         <Switch>
           <Route exact path="/">
           <Helmet>
+          <meta name="google-site-verification" content="EMNlk-CFekq6dmalOlHKkceGXVjvj6AfsphW3TcGgkE" />
           <title>Grow Your Ventures - Solutions to Every Need</title>
           <meta name="robots" content="index, follow"/>
 
