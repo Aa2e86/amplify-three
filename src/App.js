@@ -101,7 +101,11 @@ function ArticleData({ articleTitle } ) {
     <div  >
       <Helmet>
           <title>{title}</title>
+          <meta name="robots" content=" nofollow"/>
+
           <meta name="description" content={description} />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="canonical" href={window.location.href} />
         </Helmet>
    <div style={{height: "550px", backgroundColor:"#0F141D", display: "flex", flexDirection: "grid", alignItems: "center", justifyContent: "center",marginBottom:"-2%"}}>
    <div style={{position:"relative",backgroundColor:"#0F141D", width:"40%", height:"100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
@@ -366,9 +370,10 @@ function App({ signOut }) {
         <Switch>
           <Route exact path="/">
           <Helmet>
-          <title>Grow Your Ventures - Strategies to Improve Work Home and Living</title>
+          <title>Grow Your Ventures - Solutions to Every Need</title>
           <meta name="description" content="Strategies to Improve Work Home and Living" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+         
 
         </Helmet>
 
@@ -381,11 +386,18 @@ function App({ signOut }) {
          <CustomFooter/>
           </Route>
           {/* <Route path="/upload" component={withAuthenticationRequired(UploadPage)} /> */}
-          <Route path="/upload">
+          <Route path="/upload"><Helmet>
+          <title>Upload - For Editors Only</title>
+          <meta name="description" content="Editors Ui so that they can upload and edit content" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="robots" content="noindex"/>
+        </Helmet>
+          
           <div className='container'style={{marginTop:"10%"}} >
           <Authenticator hideSignUp={true}>
             
-            <h2>Here you can design you content. Look at the comments:<a target="_blank" href=" https://jsfiddle.net/98oa5rm3/">Template</a> and here is a tutorial <a target="_blank" href=" https://docs.google.com/document/d/1HJZx-1tNGx2ssP_wf5z3hpUG1PfdUlap3aCoL3quPAw/edit#">Template</a></h2>
+            <h2>Here you can design you content. Look at the comments:<a target="_blank" href=" https://jsfiddle.net/98oa5rm3/">Template</a> and here is a tutorial <a target="_blank" href=" https://docs.google.com/document/d/1HJZx-1tNGx2ssP_wf5z3hpUG1PfdUlap3aCoL3quPAw/edit#">Doc</a></h2>
+           <h2> <u>Create New Article Below (Scroll down to edit)</u></h2>
             <CreateNote style={{ position: 'absolute',background: "white",
   marginLeft: "auto",
   marginRight: 'auto',
@@ -410,7 +422,7 @@ function App({ signOut }) {
       accessLevel="public"
     />
             <div className="container" style={{marginTop:"7em"}}>
-            
+            <h2> <u>Update Existing Article Below </u></h2>
            <StoryUpdateCollection
   overrideItems={({ item, idx }) => {
     return {
