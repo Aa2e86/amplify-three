@@ -460,7 +460,7 @@ function App({ signOut }) {
           <ArticleData articleTitle={match.params.articleTitle}  
           />
           <div style={{marginTop:"-1em",marginLeft:"8em",marginRight:"9em"}}>
-          <StoryCollectionData
+          {/* <StoryCollectionData
   overrides={{
     SearchBarWrapper: {
       style: {
@@ -468,7 +468,7 @@ function App({ signOut }) {
       },
     },
   }}
-/> 
+/>  */}
           </div>
           <CustomFooter/>
           </>
