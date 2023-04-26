@@ -1,0 +1,13 @@
+{
+  "resourceName": "s3growyourventuresimagestorage",
+  "bucketName": "growyourventures-image-storage",
+  "policyUUID": "7d60f550",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE"
+  ]
+}
