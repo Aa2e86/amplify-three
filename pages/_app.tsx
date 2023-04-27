@@ -1,11 +1,23 @@
 import '@/styles/globals.css'
 import '@/styles/style.css'
 import type { AppProps } from 'next/app'
-import { Amplify } from 'aws-amplify';
 import "@aws-amplify/ui-react/styles.css";
-import awsconfig from '../src/aws-exports';
+import config from '../src/aws-exports';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { Amplify, AuthModeStrategyType } from 'aws-amplify'
+import { AmplifyProvider } from '@aws-amplify/ui-react'
+import 'bootstrap/dist/css/bootstrap.css';
+import '@aws-amplify/ui-react/styles.css'
+Amplify.configure({
+  ...config,
+  DataStore: {
+    authModeStrategyType: AuthModeStrategyType.MULTI_AUTH
+  }
+})
 
-Amplify.configure(awsconfig);
+
 
 function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

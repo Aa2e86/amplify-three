@@ -113,7 +113,7 @@ function StoryCollectionData() {
   useEffect(() => {
     const fetchStoryImages = async () => {
       const storyImages: StoryImages = {};
-
+      console.log(DataStore)
       // Loop through each story and get the URL of the cover image
       const stories = await DataStore.query(Article);
       for (const story of stories) {
