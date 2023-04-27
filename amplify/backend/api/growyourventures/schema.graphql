@@ -1,0 +1,10 @@
+type Article @model @auth(rules: [{allow: private, operations: [read, create, update]}, {allow: public, operations: [read]}]) {
+  id: ID!
+  title: String!
+  description: String!
+  text: String
+  coverimage: String
+  author: String
+  urltitle: String
+}
+ 
