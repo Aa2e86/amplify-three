@@ -343,9 +343,7 @@ export default function ArticlePage() {
       <ArticleData articleTitle={name} />
 
       <div style={{ marginTop: "-1em", marginLeft: "8em", marginRight: "9em" }}>
-        <StoryCollectionData
-    
-        />
+      
       </div>
    
       </Layout>
