@@ -150,7 +150,7 @@ async function getArticleCoverImageUrl(key) {
             padding:"5%",
             paddingTop:"2%",
             fontWeight: "200",
-            lineHeight:"1.8rem",
+            lineHeight:"1.6srem",
             backgroundColor:"#ffffff",
             borderRadius:"15px",
             width:"70%",
