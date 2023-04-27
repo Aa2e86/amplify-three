@@ -142,7 +142,7 @@ function StoryCollectionData() {
               alt:item.coverimage?.slice(0, item.coverimage.indexOf(".")).replace(/-/g, " "),
               style: {cursor: "pointer"}
             },
-            Title:{children: <Link href={`/story/${item.id}`} passHref>{item.title}</Link>,
+            Title:{children: <Link href={`/article/${item.urltitle}`} passHref>{item.title}</Link>,
             style: { marginLeft: "5px" },
             Description32683022:{children:[item.description.substring(0,150)+" . . ."],style:{marginLeft:"10px",marginRight:"10px"}},
             Description33693331:{children:new Date(item.createdAt).toLocaleDateString(),style:{paddingLeft:"10px",paddingRight:"5px"}}
