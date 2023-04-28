@@ -82,9 +82,8 @@ async function getArticleCoverImageUrl(key) {
     const toc = headings.map((heading) => {
       const id = heading.getAttribute('id');
       const text = heading.textContent;
-      return `<li><a href="#">${text}</a></li>`;
+      return `<li><a href="#${id}">${text}</a></li>`;
     }).join('');
-  
     newText = `<h3 style="margin-bottom:10px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0px !important">${toc}</ul>` + newText;
   // Get all links in the table of contents
   
