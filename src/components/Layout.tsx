@@ -1,6 +1,7 @@
 import { ReactNode, useState, useEffect } from 'react';
 import NavBar from '../ui-components/NavBar';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Poppins } from 'next/font/google';
 import { Raleway } from 'next/font/google';
 function CustomFooter(){
@@ -114,11 +115,14 @@ function ProgressBar() {
   };
 
 export default function Layout({ children }: LayoutProps) {
+  const router = useRouter();
+  const canonicalUrl = `https://growyourventures.com${router.asPath}`;
   return (
     <>
     <Head>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@300;400;500;600;700;800&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap" rel="stylesheet" />
+    <link rel="canonical" href={canonicalUrl} />
 </Head>
       <div style={{ position: 'fixed', top: '0', width: '100%', height: '8px', zIndex: 999 }}>
       <NavBar
