@@ -137,7 +137,9 @@ function StoryCollectionData() {
       
       overrideItems={({ item }) => {
         return {
+          className:"scroll-reveal",
           overrides: {
+            
             Banner: {
               src: storyImages[item.title],
               alt:item.coverimage?.slice(0, item.coverimage.indexOf(".")).replace(/-/g, " "),
@@ -161,20 +163,21 @@ export default function Home() {
   return (
     <Layout >
       <div style={{ marginTop: '7em', marginLeft: '7em', marginRight: '7em' }}>
+      <div className="background"></div>
       <Head>
         <title>Grow Your Ventures - Solutions to Every Need</title>
         <meta name="robots" content="index, follow" />
         <meta name="description" content="Strategies to Improve Work Home and Living" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Link href="/">
-      <h1 style={{ paddingLeft: '1%', fontSize:"3.2vw", fontFamily: 'raleway',color: "#383832", fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+    
+      <h1 style={{ paddingLeft: '1%', fontSize:"3.2vw", fontFamily: 'raleway',color: "#rgb(65 65 70)", fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
         FEATURED
       </h1>
       <div style={{ width: '22%', borderBottom: '1px solid black', marginBottom: '2%' }}></div>
       
       <StoryCollectionData />
-      </Link>
+    
 
   </div>
     </Layout>

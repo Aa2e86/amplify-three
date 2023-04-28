@@ -84,7 +84,7 @@ async function getArticleCoverImageUrl(key) {
       const text = heading.textContent;
       return `<li><a href="#${id}">${text}</a></li>`;
     }).join('');
-    newText = `<h3 style="margin-bottom:10px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0px !important">${toc}</ul>` + newText;
+    newText = `<h3 style="margin-bottom:10px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:-20px !important">${toc}</ul>` + newText;
   // Get all links in the table of contents
   
   const tocDoc = parser.parseFromString(newText, 'text/html');
@@ -146,16 +146,17 @@ async function getArticleCoverImageUrl(key) {
             children: null,
             dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
-            padding:"5%",
-            paddingTop:"2%",
+            paddingLeft:"10%",
+            paddingRight:"5%",
+            
             fontWeight: "200",
             lineHeight:"1.6srem",
             backgroundColor:"#ffffff",
             borderRadius:"15px",
-            width:"70%",
+            minWidth:"70%",
             alignSelf:"center",
-        
-            marginTop:"2%"
+            margingRight:"2% !important",
+            
           },
           Coverimage:{src: coverImageUrl, height:" 22rem"},
           style:{backgroundColor:"#CED8E6"}
@@ -341,8 +342,8 @@ export default function ArticlePage() {
     <Layout>
       <ArticleData articleTitle={name} />
 
-      <div style={{ marginTop: "-1em", marginLeft: "8em", marginRight: "9em" }}>
-      
+      <div style={{ marginTop: "1em", marginLeft: "8em", marginRight: "9em" }}>
+      <StoryCollectionData/>
       </div>
    
       </Layout>

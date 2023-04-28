@@ -134,16 +134,23 @@ export default function Layout({ children }: LayoutProps) {
     Button31632483: {
      display:"none",
       className:"hover",
+      width:"10vw",
+      fontSize:"1.5vw"
     },
+    
     Button33703074: {
       className:"hover",
-      width:"10vw"
+      width:"12vw",
+      fontSize:"1.2vw",
+      height:"6vh"
     },
     
     
     
-    Button33693327:{style:{color:"#F86969"}},
-    "GROW YOUR VENTURES":{style:{wordSpacing:"4px",  fontFamily: "'Raleway', sans-serif !important",fontSize:"100px !important"}}
+    Button33693327:{style:{color:"#F86969",
+    fontSize:"1.2vw"},width:"7vw ",height:"6vh"}
+    ,
+    "GROW YOUR VENTURES":{style:{wordSpacing:"5px", fontFamily: "'Raleway', sans-serif !important",fontSize:"2vw !important"}}
   }}
 />
         <ProgressBar />
