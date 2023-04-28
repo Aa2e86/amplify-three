@@ -8,9 +8,7 @@
 body {
   background-color: #ffffff !important;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:  'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,6 +19,7 @@ body {
 .articleContent section{
     margin-top:-1rem;
 }*/
+
 strong{
   font-weight:bold !important ;
  
@@ -37,6 +36,9 @@ strong{
     font-weight: 400;
     margin-left:-3vw;
 } 
+.articleContent{
+  font-family: 'Poppins', sans-serif !important;
+}
 .articleContent h2{
     margin-left:-3vw;
   font-size: 2.5rem;
@@ -47,6 +49,7 @@ strong{
   margin-bottom:-10px !important;
   line-height: 1.25;
 } 
+
 .articleContent img{
   font-size: 2rem;
   margin-top:25px  !important;

@@ -133,7 +133,7 @@ export default function Layout({ children }: LayoutProps) {
     
     
     Button33693327:{style:{color:"#F86969"}},
-    "GROW YOUR VENTURES":{style:{wordSpacing:"4px",fontFamily:"Raleway"}}
+    "GROW YOUR VENTURES":{style:{wordSpacing:"4px",  fontFamily: "'Raleway', sans-serif !important",}}
   }}
 />
         <ProgressBar />

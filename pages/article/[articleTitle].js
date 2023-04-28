@@ -154,7 +154,7 @@ async function getArticleCoverImageUrl(key) {
             borderRadius:"15px",
             width:"70%",
             alignSelf:"center",
-            fontFamily: "'Poppins', sans-serif",
+        
             marginTop:"2%"
           },
           Coverimage:{src: coverImageUrl, height:" 22rem"},
