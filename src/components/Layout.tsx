@@ -1,5 +1,7 @@
 import { ReactNode, useState, useEffect } from 'react';
 import NavBar from '../ui-components/NavBar';
+import Head from 'next/head';
+import { Poppins } from 'next/font/google';
 import { Raleway } from 'next/font/google';
 function CustomFooter(){
     return(
@@ -114,6 +116,10 @@ function ProgressBar() {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
+    <Head>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@300;400;500;600;700;800&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap" rel="stylesheet" />
+</Head>
       <div style={{ position: 'fixed', top: '0', width: '100%', height: '8px', zIndex: 999 }}>
       <NavBar
   height="70px"
