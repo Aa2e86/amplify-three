@@ -116,7 +116,7 @@ function ProgressBar() {
 
 export default function Layout({ children }: LayoutProps) {
   const router = useRouter();
-  const canonicalUrl = `https://growyourventures.com${router.asPath}`;
+  const canonicalUrl = `https://www.growyourventures.com${router.asPath}`;
   return (
     <>
     <Head>

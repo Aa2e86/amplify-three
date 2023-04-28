@@ -33,21 +33,24 @@ strong{
     margin-bottom:-20px !important;
     text-shadow: 1px 1px #c4c1c1;
     font-size: 2rem;
-    font-weight: 400;
+    color:black !important;
+    font-weight: 300;
     margin-left:-3vw;
 } 
 .articleContent{
   font-family: 'Poppins', sans-serif !important;
+
 }
 .articleContent h2{
     margin-left:-3vw;
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 4  00;
   text-shadow: 2px 2px #c4c1c1;
   padding-top: 90px !important;
   margin-top:-70px !important;
   margin-bottom:-10px !important;
   line-height: 1.25;
+  color:black !important;
 } 
 
 .articleContent img{
@@ -55,13 +58,20 @@ strong{
   margin-top:25px  !important;
   margin-bottom:15px  !important;
 }
+.articleContent{
+  margin-right: 5vw !important;
+  max-width: 60vw !important;
+}
 .articleContent p{
   
   margin-top:10px  !important;
+  
   font-weight: 400 !important;
 }
 .articleContent li{
     list-style-type: disc;
+    font-weight: 400 !important;
+  
 }
 .articleContent strong b{
   font-weight:800 !important;
