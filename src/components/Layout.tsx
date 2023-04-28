@@ -1,5 +1,6 @@
 import { ReactNode, useState, useEffect } from 'react';
 import NavBar from '../ui-components/NavBar';
+import { Raleway } from 'next/font/google';
 function CustomFooter(){
     return(
       <div
@@ -132,7 +133,7 @@ export default function Layout({ children }: LayoutProps) {
     
     
     Button33693327:{style:{color:"#F86969"}},
-    "GROW YOUR VENTURES":{style:{wordSpacing:"4px"}}
+    "GROW YOUR VENTURES":{style:{wordSpacing:"4px",fontFamily:"Raleway"}}
   }}
 />
         <ProgressBar />
