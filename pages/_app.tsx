@@ -10,8 +10,13 @@ import { AmplifyProvider } from '@aws-amplify/ui-react'
 import "@aws-amplify/ui-react/styles.css";
 import awsconfig from '../src/aws-exports';
 
-Amplify.configure(awsconfig);
-
+// Amplify.configure(awsconfig);
+Amplify.configure({
+  ...awsconfig,
+  DataStore: {
+    authModeStrategyType: AuthModeStrategyType.MULTI_AUTH
+  }
+})
 
 function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
