@@ -133,7 +133,8 @@ function StoryCollectionData() {
   return (
     <StoryCollection
       className='story-collection'
-      templateColumns="repeat(auto-fit, minmax(400px, 1fr))"
+      templateColumns="repeat(auto-fit, minmax(380px, 1fr))"
+      
       overrideItems={({ item }) => {
         return {
           overrides: {
@@ -144,9 +145,9 @@ function StoryCollectionData() {
             },
             Title:{children: <Link href={`/article/${item.urltitle}`} passHref>{item.title}</Link>,
             style: { marginLeft: "5px" },
-            Description32683022:{children:[item.description.substring(0,150)+" . . ."],style:{marginLeft:"10px",marginRight:"10px"}},
-            Description33693331:{children:new Date(item.createdAt).toLocaleDateString(),style:{paddingLeft:"10px",paddingRight:"5px"}}
-          }
+          },
+          Description32683022:{children:[item.description.substring(0,150)+" . . ."],style:{marginLeft:"10px",marginRight:"10px"}},
+          Description33693331:{children:new Date(item.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day:"numeric" }),style:{paddingLeft:"10px",marginTop:"-10px",paddingRight:"5px"}}
         }
       }}
       }/>
@@ -167,7 +168,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Link href="/">
-      <h1 style={{ paddingLeft: '1%', fontSize:"3.2vw", fontFamily: 'raleway', fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+      <h1 style={{ paddingLeft: '1%', fontSize:"3.2vw", fontFamily: 'raleway',color: "#383832", fontWeight: '600', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
         FEATURED
       </h1>
       <div style={{ width: '22%', borderBottom: '1px solid black', marginBottom: '2%' }}></div>
