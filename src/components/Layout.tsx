@@ -117,14 +117,24 @@ function ProgressBar() {
   };
 
 
-
 export default function Layout({ children }: LayoutProps) {
   const router = useRouter();
   const canonicalUrl = `https://www.growyourventures.com${router.asPath}`;
   return (
     <>
     <Head>
-    
+    {/* Add your Google Tag Manager code here */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBEKYRL9C2"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-BBEKYRL9C2');
+              `,
+            }}
+          />
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@300;400;500;600;700;800&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap" rel="stylesheet" />
     <link rel="canonical" href={canonicalUrl} />
