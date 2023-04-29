@@ -3,7 +3,7 @@ import NavBar from '../ui-components/NavBar';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Montserrat, Poppins } from 'next/font/google';
-
+//sgasgsagsagas
 import { Raleway } from 'next/font/google';
 function CustomFooter(){
     return(
