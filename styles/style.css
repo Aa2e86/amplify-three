@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:wght@300;400;500;600;700;800&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@300;400;500;600;700;800&family=Major+Mono+Display&family=Ubuntu:wght@400&display=swap&family=Sparten:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:wght@500&display=swap');
 
 body {
   background-color: #ffffff !important;
   margin: 0;
-  font-family:  'Poppins', sans-serif;
+  font-family:  'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +34,7 @@ strong{
     text-shadow: 1px 1px #c4c1c1;
     font-size: 2rem;
     color:black !important;
-    font-weight: 300;
+    font-weight: 400;
     margin-left: 0.25vw;
 } 
 .articleContent h4{
@@ -47,13 +47,13 @@ strong{
 
 } 
 .articleContent{
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
 
 }
 .articleContent h2{
   
   font-size: 2.5rem;
-  font-weight: 4  00;
+  font-weight: 400;
   text-shadow: 2px 2px #c4c1c1;
   padding-top: 40px !important;
   margin-top:-10px !important;
@@ -72,7 +72,7 @@ strong{
   max-width: 60vw !important;
 }
 .articleContent p{
-  margin-left: 1vw;
+  margin-left: 0.5vw;
   margin-top:00px  !important;
   
   font-weight: 400 !important;
