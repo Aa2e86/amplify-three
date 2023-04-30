@@ -181,7 +181,7 @@ export async function getStaticPaths({ req }) {
   const SSR = withSSRContext({ req });
   const darticles = await SSR.DataStore.query(Article);
   return {
-    paths: darticles.map(darticle => ({ params: { articleTitle:darticle.title }})),
+    paths: darticles.map(darticle => ({ params: { articleTitle:darticle.urltitle }})),
     fallback: true
   };
 }
@@ -341,13 +341,15 @@ export default function ArticlePage(props) {
     
      
 
-    <Layout>
-    <ArticleData dart={props}  />
+   <Layout>
+   <ArticleData dart={props}  />
       <div style={{ marginTop: "1em", marginLeft: "8em", marginRight: "9em" }}>
       <StoryCollectionData/>
       </div>
+   </Layout>
+
    
-      </Layout>
+    
     </>
   );
 }
