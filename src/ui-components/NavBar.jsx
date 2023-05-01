@@ -55,7 +55,7 @@ export default function NavBar(props) {
       >
         <Text
           fontFamily="Raleway"
-    
+          fontSize="28px"
           fontWeight="700"
           color="rgba(235,250,237,1)"
           textTransform="capitalize"

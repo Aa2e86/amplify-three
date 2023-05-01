@@ -37,7 +37,7 @@ export default function StoryCollection(props) {
       templateColumns="1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
-      justifyContent="center"
+      justifyContent="stretch"
       items={items || []}
       {...getOverrideProps(overrides, "StoryCollection")}
       {...rest}

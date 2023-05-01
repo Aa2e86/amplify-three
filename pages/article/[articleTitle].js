@@ -283,6 +283,7 @@ async function modifyText(text) {
           <title>{title}</title>
           <meta name="robots" content="index, follow"/>
 
+          <link rel="icon" type="image/png" href="../images/favicon.png"/>    
 
           <meta name="description" content={description} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
