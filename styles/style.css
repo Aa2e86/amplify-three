@@ -34,26 +34,27 @@ strong{
     text-shadow: 1px 1px #c4c1c1;
     font-size: 2rem;
     color:black !important;
-    font-weight: 400;
+    font-weight: 500;
     margin-left: 0.25vw;
 } 
 .articleContent h4{
   margin-left: 0.5vw;
   margin-bottom:-20px !important;
   text-shadow: 1px 1px #c4c1c1;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color:black !important;
-  font-weight: 300;
+  font-weight: 500;
 
 } 
 .articleContent{
   font-family: 'Montserrat', sans-serif !important;
+  line-height: 2.2rem !important;
 
 }
 .articleContent h2{
   
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 500;
   text-shadow: 2px 2px #c4c1c1;
   padding-top: 80px !important;
   margin-top:-50px !important;
@@ -73,13 +74,13 @@ strong{
 }
 .articleContent p{
   margin-left: 0.5vw;
-  margin-top:00px  !important;
+  margin-top:-10px  !important;
   
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 .articleContent li{
     list-style-type: disc;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     margin-left: 5vw;
   
 }
