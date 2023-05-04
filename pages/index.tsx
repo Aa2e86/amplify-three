@@ -168,7 +168,7 @@ export default function Home() {
 
         <title>Grow Your Ventures - Solutions to Every Need</title>
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="Strategies to Improve Work Home and Living" />
+        <meta name="description" content="Find solutions for the most intriguing problems and grow your ventures today." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
     
