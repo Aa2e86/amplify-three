@@ -10,12 +10,17 @@ import { Article } from "../models";
 import {
   getOverrideProps,
   useDataStoreUpdateAction,
+  useNavigateAction,
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { schema } from "../models/schema";
 import { Button, Divider, Flex, Icon, TextField } from "@aws-amplify/ui-react";
 export default function UpdateNote(props) {
   const { article, overrides, ...rest } = props;
+  const [
+    textFieldThreeThreeFourNineThreeZeroSixFiveValue,
+    setTextFieldThreeThreeFourNineThreeZeroSixFiveValue,
+  ] = useStateMutationAction(article?.title);
   const [
     textFieldThreeThreeFourNineThreeZeroSixSevenValue,
     setTextFieldThreeThreeFourNineThreeZeroSixSevenValue,
@@ -33,20 +38,17 @@ export default function UpdateNote(props) {
     setTextFieldThreeThreeEightFiveThreeZeroEightOneValue,
   ] = useStateMutationAction(article?.author);
   const [
-    textFieldThreeThreeFourNineThreeZeroSixFiveValue,
-    setTextFieldThreeThreeFourNineThreeZeroSixFiveValue,
-  ] = useStateMutationAction(article?.title);
-  const [
     textFieldThreeThreeNineZeroThreeZeroSevenSevenValue,
     setTextFieldThreeThreeNineZeroThreeZeroSevenSevenValue,
   ] = useStateMutationAction(article?.urltitle);
+  const buttonOnMouseUp = useNavigateAction({ type: "reload" });
   const buttonOnClick = useDataStoreUpdateAction({
     fields: {
+      title: textFieldThreeThreeFourNineThreeZeroSixFiveValue,
       description: textFieldThreeThreeFourNineThreeZeroSixSevenValue,
       text: textFieldThreeThreeFourNineThreeZeroSixSixValue,
       coverimage: textFieldThreeThreeFourNineThreeZeroSixEightValue,
       author: textFieldThreeThreeEightFiveThreeZeroEightOneValue,
-      title: textFieldThreeThreeFourNineThreeZeroSixFiveValue,
       urltitle: textFieldThreeThreeNineZeroThreeZeroSevenSevenValue,
     },
     id: article?.id,
@@ -242,6 +244,9 @@ export default function UpdateNote(props) {
           isDisabled={false}
           variation="primary"
           children="Save"
+          onMouseUp={() => {
+            buttonOnMouseUp();
+          }}
           onClick={() => {
             buttonOnClick();
           }}
