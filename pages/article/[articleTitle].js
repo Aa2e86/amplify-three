@@ -206,7 +206,8 @@ function ArticleData({dart} ) {
   const [coverImageUrl, setCoverImageUrl] = useState(null);
   const [modifiedText, setModifiedText] = useState(null);
 
-
+    
+  console.log(fetchedArticle.title)
   useEffect(() => {
     const fetchArticle = async () => {
       try {
@@ -340,8 +341,7 @@ export default function ArticlePage(props) {
   return (
     <>
     
-     
-
+ 
    <Layout>
    <ArticleData dart={props}  />
       <div style={{ marginTop: "1em", marginLeft: "8em", marginRight: "9em" }}>
