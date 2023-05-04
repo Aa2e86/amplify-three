@@ -207,7 +207,8 @@ function ArticleData({dart} ) {
   const [coverImageUrl, setCoverImageUrl] = useState(null);
   const [modifiedText, setModifiedText] = useState(null);
 
-
+    
+  console.log(fetchedArticle.title)
   useEffect(() => {
     const fetchArticle = async () => {
       try {
