@@ -193,9 +193,10 @@ export async function getStaticProps(context) {
   
   const dartt = await SSR.DataStore.query(Article, c => c.urltitle.eq(removedash));
   const { title, createdAt, description,author,coverimage,text } =  serializeModel(dartt)[0]
-
   return {
     props: { title, createdAt, description,author,coverimage,text },
+  revalidate: 1
+
   }
 }
 
