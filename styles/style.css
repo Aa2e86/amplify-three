@@ -46,6 +46,33 @@ strong{
   font-weight: 500;
 
 } 
+.tip {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff2cc;
+  border: 1px solid #ffd633;
+  margin-bottom: 20px;
+}
+
+.tip strong {
+display: inline-block;
+padding: 5px;
+font-size:1.5rem;
+color: #fff;
+font-weight: bold;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.tip p {
+  margin: 0;
+  font-size: 18px;
+  color: #5d5d5d;
+
+  line-height: 1.4;
+}
 .articleContent{
   font-family: 'Poppins', sans-serif !important;
   line-height: 2.2rem !important;
