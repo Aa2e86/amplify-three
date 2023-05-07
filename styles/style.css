@@ -29,7 +29,7 @@ strong{
    
     }
 .articleContent h3{
-    margin-top:30px !important;
+    margin-top:15px !important;
     margin-bottom:-10px !important;
     text-shadow: 1px 1px #c4c1c1;
     font-size: 2rem;
@@ -37,9 +37,18 @@ strong{
     font-weight: 400;
     margin-left: 0.25vw;
 } 
+.articleContent li h3{
+  margin-top:-35px !important;
+  font-weight:500;
+  font-size: 1.8rem;
+}
+.articleContent li{
+  margin-bottom: -20px;
+}
 .articleContent h4{
+  margin-top:40px !important;
   margin-left: 0.5vw;
-  margin-bottom:-20px !important;
+  margin-bottom:-10px !important;
   text-shadow: 1px 1px #c4c1c1;
   font-size: 1.8rem;
   color:black !important;
@@ -81,15 +90,15 @@ margin-bottom: 10px;
 .articleContent{
   font-family: 'Poppins', sans-serif !important;
   line-height: 2.2rem !important;
-
+ 
 }
 .articleContent h2{
   
   font-size: 2.5rem;
   font-weight: 500;
   text-shadow: 1px 1px #c4c1c1;
-  padding-top: 80px !important;
-  margin-top:-50px !important;
+  padding-top: 100px !important;
+  margin-top:-80px !important;
   margin-bottom:-10px !important;
   line-height: 1.25;
   color:black !important;
@@ -144,8 +153,13 @@ border: 1px solid #444; padding: 10px;
 }
 
 ul{
-  margin-top: -1.5rem !important;
-  
+  margin-top: -2.5rem !important;
+  margin-bottom: -2.4rem !important;
+
+}
+ol{
+  margin-top: -2.5rem !important;
+  margin-bottom: -2.4rem !important;
 }
 
 

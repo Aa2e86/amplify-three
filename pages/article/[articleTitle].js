@@ -263,9 +263,9 @@ async function modifyText(text) {
   const toc = headings.map((heading) => {
     const id = heading.getAttribute('id');
     const text = heading.textContent;
-    return `<li><a href="#${id}">${text}</a></li>`;
+    return `<li style="margin-bottom:0 !important"><a href="#${id}">${text}</a></li>`;
   }).join('');
-  newText = `<h3 style="margin-bottom:10px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0vh !important">${toc}</ul>` + newText;
+  newText = `<h3 style="margin-bottom:10px !important;margin-top:40px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0vh !important">${toc}</ul>` + newText;
   // Get all links in the table of contents
 
   const tocDoc = parser.parseFromString(newText, 'text/html');
