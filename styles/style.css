@@ -12,7 +12,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.amplify-pagination{
+  margin-top: 40px !important;
+}
 /* .articleContent p{
    margin-top:-1rem;
 }

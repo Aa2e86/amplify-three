@@ -133,7 +133,7 @@ function StoryCollectionData() {
     <StoryCollection
       className='story-collection'
       templateColumns="repeat(auto-fit, minmax(390px, 1fr))"
-      
+      justifyContent="center"
       overrideItems={({ item }) => {
         return {
           className:"scroll-reveal",
