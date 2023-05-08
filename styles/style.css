@@ -57,21 +57,24 @@ strong{
   font-weight: 500;
 
 } 
-.tip {
+.articleContent .tip {
   display: flex;
   align-items: center;
-  padding: 25px;
+  padding: 20px;
   border-radius: 5px;
   background-color: #fff2cc;
   color: #444036;
   border: 1px solid #ffd633;
   margin-bottom: 20px;
+  
+  font-weight: 500 !important;
 }
 
 .tip strong {
 display: inline-block;
 padding: 5px;
 font-size:1.5rem;
+margin-right: 20px;
 color: #40321a;
 font-weight: 500 !important;
 border-radius: 5px;
@@ -82,7 +85,7 @@ margin-bottom: 10px;
   margin: 0;
   font-size: 18px;
   color: #5d5d5d;
-
+ font-weight: 500 !important;
   line-height: 1.4;
 }
 .tip:hover {
@@ -91,7 +94,7 @@ margin-bottom: 10px;
 
 .articleContent{
   font-family: 'Poppins', sans-serif !important;
-  line-height: 2.2rem !important;
+  line-height: 2.3rem !important;
  
 }
 .articleContent h2{
@@ -119,11 +122,11 @@ margin-bottom: 10px;
   margin-left: 0.5vw;
   margin-top:-10px  !important;
   
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 .articleContent li{
     list-style-type: disc;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     margin-left: 5vw;
   
 }

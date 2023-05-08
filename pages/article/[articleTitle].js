@@ -319,9 +319,9 @@ async function modifyText(text) {
             lineHeight:"1.6srem",
             backgroundColor:"#ffffff",
             borderRadius:"15px",
-            minWidth:"70%",
+            minWidth:"68%",
             alignSelf:"center",
-            margingRight:"2% !important",
+           
             
           },
           Coverimage:{src: coverImageUrl, height:" 22rem"},
