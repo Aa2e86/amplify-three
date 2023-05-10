@@ -283,8 +283,11 @@ async function modifyText(text) {
     <div  >
       <Head>
           <title>{title}</title>
-          <meta name="robots" content="index, follow"/>
-
+          <meta name="robots" content="follow, index"/>
+          <meta name="googlebot" content="follow, index"/>
+          <meta name="max-snippet" content="-1"/>
+          <meta name="max-video-preview" content="-1"/>
+          <meta name="max-image-preview" content="large"/>
           <link rel="icon" type="image/png" href="../images/favicon.png"/>    
 
           <meta name="description" content={description} />
