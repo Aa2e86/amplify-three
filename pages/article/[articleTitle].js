@@ -272,7 +272,7 @@ async function modifyText(text) {
   }).join('');
   newText = `<div style={{ position: "relative" }}><div class="toc ${isFixed ? "fixed" : ""}"><h3 style="  
   margin-left:40px;margin-bottom:10px !important;margin-top:40px !important;   color:#313532 !important;
-  ">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0vh !important">${toc}</ul></div></div>` + newText;
+  ">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0vh !important">${toc}</ul></div></div><br><br>` + newText;
   // Get all links in the table of contents
 //<div style={{ position: "relative" }}>
      
