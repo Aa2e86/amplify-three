@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { serializeModel } from "@aws-amplify/datastore/ssr";
-
+import { debounce } from "lodash";
 import { Authenticator} from '@aws-amplify/ui-react';
 
 import { Article } from '../../src/models'
@@ -206,7 +206,21 @@ function ArticleData({dart} ) {
   const [article, setArticle] = useState(null);
   const [coverImageUrl, setCoverImageUrl] = useState(null);
   const [modifiedText, setModifiedText] = useState(null);
+  const [isFixed, setIsFixed] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (window.scrollY > 750) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    }, 1);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
     
   console.log(fetchedArticle.title)
   useEffect(() => {
@@ -263,11 +277,15 @@ async function modifyText(text) {
   const toc = headings.map((heading) => {
     const id = heading.getAttribute('id');
     const text = heading.textContent;
-    return `<li style="margin-bottom:0 !important"><a href="#${id}">${text}</a></li>`;
+    return `<li style="margin-bottom:0 !important;  color:#313532 !important;
+    "><a href="#${id}">${text}</a></li>`;
   }).join('');
-  newText = `<h3 style="margin-bottom:10px !important;margin-top:40px !important">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0vh !important">${toc}</ul>` + newText;
+  newText = `<div style={{ position: "relative" }}><div class="toc ${isFixed ? "fixed" : ""}"><h3 style="  
+  margin-left:40px;margin-bottom:10px !important;margin-top:40px !important;   color:#313532 !important;
+  ">Table of Contents</h3><ul style="margin-top:0rem !important;margin-bottom:0vh !important">${toc}</ul></div></div>` + newText;
   // Get all links in the table of contents
-
+//<div style={{ position: "relative" }}>
+     
   const tocDoc = parser.parseFromString(newText, 'text/html');
   const tocLinks = Array.from(tocDoc.querySelectorAll('li a'));
 
@@ -294,9 +312,9 @@ async function modifyText(text) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
    
         </Head>
-   <div style={{height: "550px", backgroundColor:"#0F141D", display: "flex", flexDirection: "grid", alignItems: "center", justifyContent: "center",marginBottom:"-2%"}}>
-   <div style={{position:"relative",backgroundColor:"#0F141D", width:"40%", height:"100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-    <h1 style={{color:"white", fontSize:"3.1vw", fontWeight:"700",padding:"30px", paddingLeft:"30px"}}>{title}</h1>
+   <div style={{height: "550px",zIndex:"99",backgroundColor:"#0F141D", display: "flex", flexDirection: "grid", alignItems: "center", justifyContent: "center",marginBottom:"-2%"}}>
+   <div style={{position:"relative",zIndex:"99",backgroundColor:"#0F141D", width:"40%", height:"100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+    <h1 style={{color:"white",zIndex:"99", fontSize:"3.1vw", fontWeight:"700",padding:"30px", paddingLeft:"30px"}}>{title}</h1>
     <h3 style={{ borderTop: "1px solid rgba(255, 255, 255, 0.5)",position: "absolute", bottom: 10, left: "50%", transform: "translateX(-50%)", color: "rgba(245, 245, 245, 0.9)",width:"60%", fontSize: "1rem", fontWeight: 500,padding:'2%', paddingBottom: "3%", textAlign: "center" }}>
   {author} at {formattedDate}   
   </h3>
@@ -315,14 +333,14 @@ async function modifyText(text) {
             children: null,
             dangerouslySetInnerHTML: { __html: modifiedText },
             fontSize: "1.2rem",
-            paddingLeft:"10%",
-            paddingRight:"5%",
+            paddingLeft:"0%",
+            paddingRight:"18%",
             
             fontWeight: "200",
             lineHeight:"1.6srem",
             backgroundColor:"#ffffff",
             borderRadius:"15px",
-            minWidth:"68%",
+            minWidth:"60%",
             alignSelf:"center",
            
             
@@ -340,6 +358,7 @@ async function modifyText(text) {
 
 
 
+
 export default function ArticlePage(props) {
 
   return (
@@ -348,6 +367,7 @@ export default function ArticlePage(props) {
  
    <Layout>
    <ArticleData dart={props}  />
+
       <div style={{ marginTop: "1em", marginLeft: "8em", marginRight: "9em" }}>
       <StoryCollectionData/>
       </div>
