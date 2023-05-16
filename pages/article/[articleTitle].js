@@ -209,17 +209,7 @@ function ArticleData({dart} ) {
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
-    const handleScroll = debounce(() => {
-//       if (window.scrollY > 750) {
-//         setIsFixed(true);
-//       } else {
-//         setIsFixed(false);
-//       }
-    }, 1);
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
+  
   }, []);
     
   console.log(fetchedArticle.title)
