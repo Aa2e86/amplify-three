@@ -340,13 +340,29 @@ margin: 0px;
 }
 
 
-.product-box {
-  width: 400px;
-
-  padding: 20px;
+.articleContent .product-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  padding: 30px;
   text-align: center;
   background-color: #f8f8f8;
   border-radius: 8px;
+  background-color: rgba(255, 242, 204,0.7);
+  border:2px solid rgb(244, 192, 97);
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+  padding-bottom:0px !important;  
+  padding-top:0px !important;
+}
+
+.articleContent .product-name {
+line-height: 1 !important ;
+width:100%;
+font-size: 1.8rem !important;
+color:rgb(42, 38, 38) !important;
+margin-bottom: 20px !important;
 }
 
 .product-link {
@@ -354,20 +370,30 @@ margin: 0px;
   color: #333;
   transition: transform 0.3s ease-in-out;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 00px;
 }
 
-.product-link:hover {
-  transform: scale(1.05);
+.product-box:hover {
+  transform: scale(1.01);
   color: #111111;
+
+  background-color: rgba(255, 242, 204,0.5);
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+
 }
+.product-box {
+  position: relative;
+}
+
+
+
 
 .product-image-container {
-  width: 400px;
-  height: 100px;
-  margin-bottom: 20px;
+  width: auto;
+  height: 100%;
+  margin-right: 20px;
   overflow: hidden;
 }
 
@@ -375,24 +401,34 @@ margin: 0px;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  margin-bottom: 10px;
 }
 
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+  line-height: 1.2 !important ;
+
+}
 
 .product-name {
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px !important;
   font-size: 2rem;
   font-weight: bold;
 }
 
 .product-description {
   font-size: 16px;
-  margin-bottom: 10px;
+  line-height: 1.2 !important ;
+  margin-top: 10px;
 }
 
 .product-price {
-  color: black !important;
+  justify-self: center;
+  width: 100%;
   margin-top: 20px;
   display: block;
   font-size: 18px;
@@ -406,10 +442,9 @@ margin: 0px;
 
 .product-price a {
   text-decoration: none !important;
-
   color: black !important;
 }
 
 .product-price:hover {
-  background-color: #ff9800;
+  background-color: #fb9f1f;
 }
