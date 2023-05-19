@@ -341,10 +341,13 @@ margin: 0px;
 
 
 .articleContent .product-box {
+  justify-self: center !important;
+  align-self: center !important;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
+  width: 80%;
+  margin: 0 10%;
   padding: 30px;
   text-align: center;
   background-color: #f8f8f8;
@@ -431,7 +434,8 @@ margin-bottom: 20px !important;
   width: 100%;
   margin-top: 20px;
   display: block;
-  font-size: 18px;
+  font-size: 1rem;
+  margin-bottom:3px;
   font-weight: bold;
   color: #333;
   background-color: #ffc107;
