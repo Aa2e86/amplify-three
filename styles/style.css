@@ -19,7 +19,8 @@ body {
 .articleContent{
   font-family: 'Be Vietnam Pro', sans-serif !important;
   line-height: 2.3rem !important;
-  padding-top:30px;
+  padding-top:00px;
+  z-index:-1 !important;
 }
 
 @keyframes slideIn {
@@ -49,6 +50,11 @@ body {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .toc {
+    display: none;
+  }
+}
 .toc {
   position: absolute;
   opacity:1;
@@ -194,6 +200,13 @@ margin-bottom: 10px;
 .articleContent{
   margin-right: 12vw !important;
   max-width: 70vw !important;
+}
+@media only screen and (max-width: 767px) {
+  .articleContent{
+    margin-left: 30vw !important;
+    max-width: 100% !important;
+    width:100% !important;
+  }
 }
 .articleContent p{
   margin-left: 0.5vw;
