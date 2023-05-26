@@ -20,7 +20,7 @@ body {
   font-family: 'Be Vietnam Pro', sans-serif !important;
   line-height: 2.3rem !important;
   padding-top:00px;
-  /* z-index:-1 !important; */
+  z-index:-1 !important;
 }
 
 @keyframes slideIn {
@@ -63,6 +63,7 @@ body {
   max-width: 35%;
   height:auto;
   padding-right:5%;
+  z-index:999 !important;
 
   width: 35%;
   background-color: #fff2cc;
