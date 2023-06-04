@@ -124,7 +124,7 @@ export default function Layout({ children }: LayoutProps) {
     <>
     <Head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2138344951117504"
-     crossorigin="anonymous"></script>
+     crossOrigin="anonymous"></script>
    
        {/* Add your Google Tag Manager code here */}
        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBEKYRL9C2"></script>
