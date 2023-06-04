@@ -250,6 +250,30 @@ async function modifyText(text) {
     newText = newText.replace(imgTag, newImgTag);
     match = regex.exec(text);
   }
+
+  // Split the text into paragraphs
+  const paragraphs = newText.split(/<\/p>/);
+
+  // Insert ads after every 3 paragraphs
+  const adHtml = `
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6003047186037519" crossorigin="anonymous"></script>
+    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-6003047186037519" data-ad-slot="5472652403"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  `;
+
+  const paragraphsWithAds = [];
+  for (let i = 0; i < paragraphs.length; i++) {
+    paragraphsWithAds.push(paragraphs[i]);
+    if ((i + 1) % 5 === 0) {
+      paragraphsWithAds.push(adHtml);
+    }
+  }
+
+  // Combine paragraphs back into the modified text
+  newText = paragraphsWithAds.join('</p>');
+
+
+
   // newText = newText.replace(codeRegex, '<code style="  border-radius:15px; background-color: #343541  ; color: #D1D5DB; padding: 0.5rem; display: inline-block;">$1</code>');
 
   // Add id attribute to each h2 element
